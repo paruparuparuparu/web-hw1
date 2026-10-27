@@ -1,0 +1,469 @@
+/* 01. 공통 변수 */
+:root {
+  --bg: #141e30;
+  --surface: #1f2b44;
+  --text: #f5f5f7;
+  --accent: #4da3ff;
+  --warn: #ff5a5f;
+  --muted: #b7c2d5;
+  --line: #36435a;
+  --gold: #ffe29a;
+  --hover-glow: #ffd65c66;
+
+  --font-title: "Black Han Sans", sans-serif;
+  --font-body: "Noto Sans KR", sans-serif;
+
+  --gap: 20px;
+}
+
+/* 02. 기본 설정과 공통 너비 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+.movie-title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.header-inner,
+.hero-inner,
+main,
+.footer-inner {
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+/* 03. 헤더 */
+.top {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-block: 20px;
+}
+
+h1 {
+  font-size: 1.35rem;
+}
+
+.brand-sub {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.13em;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 3px 0;
+  font-size: 0.8rem;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--gold);
+}
+
+/* 04. 히어로 배경과 오버레이 */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  padding-block: 48px;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.38)
+    ),
+    url("https://image.tmdb.org/t/p/w1280/1AzcUrslZJYlLd1jvLy6mswihU1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 34rem;
+  font-size: 0.9rem;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 11px 17px;
+  color: var(--bg);
+  background: var(--gold);
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* 05. 보드와 영화 카드 */
+main {
+  padding-block: 48px 64px;
+}
+
+main > section + section {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+main section {
+  scroll-margin-top: 24px;
+}
+
+main h2 {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.section-intro,
+.basis {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px var(--hover-glow);
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.info {
+  padding: 18px;
+}
+
+.info h3 {
+  font-size: 1.04rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  word-break: keep-all;
+}
+
+.year {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.audience {
+  font-size: 0.86rem;
+  margin-top: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.detail-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--gold);
+  font-size: 0.82rem;
+}
+
+.data-note {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+/* 06. 순위 배지와 평점 배지 */
+.rank,
+.badge {
+  position: absolute;
+  top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rank {
+  left: 12px;
+  width: 34px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.badge {
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--bg);
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+/* 순위 변동 */
+.change {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.change.up,
+.change.new {
+  color: var(--warn);
+}
+
+.change.down {
+  color: var(--accent);
+}
+
+.change.up::before {
+  content: "▲";
+  margin-right: 4px;
+}
+
+.change.down::before {
+  content: "▼";
+  margin-right: 4px;
+}
+
+.change.new::before {
+  content: "NEW";
+}
+
+/* 포스터가 없는 영화의 대체 표지 */
+.card.no-poster .poster-fallback {
+  aspect-ratio: 2 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-family: var(--font-title);
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--surface)
+  );
+}
+
+/* 07. 상세 페이지 */
+.detail-page {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("https://image.tmdb.org/t/p/w1280/1AzcUrslZJYlLd1jvLy6mswihU1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.back-link {
+  margin-bottom: 28px;
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.detail img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.detail dl {
+  min-width: 0;
+  margin: 0;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.detail dt {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.detail dd {
+  margin: 0 0 22px;
+}
+
+.detail dd:last-child {
+  margin-bottom: 0;
+}
+
+.movie-title {
+  font-size: 2.6rem;
+}
+
+.overview {
+  line-height: 1.95;
+  word-break: keep-all;
+}
+
+/* 08. 공통 푸터 */
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  padding-block: 28px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+footer p + p {
+  margin-top: 10px;
+}
+
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 09. 반응형: 600px 이상 */
+@media (min-width: 600px) {
+  nav ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  nav a {
+    font-size: 0.88rem;
+  }
+
+  .board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero h2 {
+    font-size: 3.5rem;
+  }
+
+  .detail {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* 10. 반응형: 1024px 이상 */
+@media (min-width: 1024px) {
+  .board {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero h2 {
+    font-size: 4rem;
+  }
+
+  .detail dl {
+    padding: 32px;
+  }
+}
