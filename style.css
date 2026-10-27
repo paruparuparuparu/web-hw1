@@ -7,6 +7,9 @@
   --warn: #ff5a5f;
   --hover-shadow: #ffd70080;
 
+  --hero-text: #f5f5f7;
+  --detail-overlay: rgba(0, 0, 0, 0.75);
+
   --font-title: "Black Han Sans", sans-serif;
   --font-body: "Noto Sans KR", sans-serif;
 
@@ -49,7 +52,7 @@ img {
   max-width: 100%;
 }
 
-/* 헤더: 제목 왼쪽, 내비게이션 오른쪽 */
+/* 헤더 */
 .top {
   display: flex;
   justify-content: space-between;
@@ -80,7 +83,7 @@ nav a {
   text-decoration: none;
 }
 
-/* 히어로: w1280 배경과 어두운 오버레이 */
+/* 히어로 */
 .hero {
   display: flex;
   flex-direction: column;
@@ -89,6 +92,7 @@ nav a {
 
   min-height: 300px;
   padding: 32px 16px;
+  color: var(--hero-text);
   text-align: center;
 
   background-image:
@@ -125,7 +129,7 @@ main h2 {
   margin-bottom: 20px;
 }
 
-/* 카드 격자: 기본 1열 */
+/* 카드 격자 */
 .board {
   display: grid;
   grid-template-columns: 1fr;
@@ -169,7 +173,7 @@ main h2 {
   margin-top: 6px;
 }
 
-/* 평점 배지: 오른쪽 위 */
+/* 평점 배지 */
 .badge {
   position: absolute;
   top: 12px;
@@ -182,7 +186,7 @@ main h2 {
   font-weight: 700;
 }
 
-/* 순위 배지: 왼쪽 위 */
+/* 순위 배지 */
 .rank {
   position: absolute;
   top: 12px;
@@ -217,7 +221,7 @@ main h2 {
   content: "NEW";
 }
 
-/* 포스터가 없는 경우의 대체 표지 */
+/* 대체 표지 */
 .card.no-poster .poster-fallback {
   aspect-ratio: 2 / 3;
 
@@ -227,6 +231,7 @@ main h2 {
 
   font-size: 5rem;
   font-family: var(--font-title);
+
   background: linear-gradient(
     135deg,
     var(--accent),
@@ -240,15 +245,15 @@ main h2 {
 
   background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.75)
+      var(--detail-overlay),
+      var(--detail-overlay)
     ),
     url("https://image.tmdb.org/t/p/w1280/1AzcUrslZJYlLd1jvLy6mswihU1.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* 상세 정보: 기본 1열 */
+/* 상세 정보 */
 .detail {
   display: grid;
   grid-template-columns: 1fr;
@@ -288,7 +293,42 @@ footer p + p {
   margin-top: 10px;
 }
 
-/* 600px 이상: 내비 가로 배치, 카드 2열, 상세 2단 */
+/* 보너스: 로딩 스켈레톤 */
+.skeleton {
+  display: none;
+  min-height: 360px;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    var(--surface) 25%,
+    var(--bg) 37%,
+    var(--surface) 63%
+  );
+  background-size: 400% 100%;
+
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+body.is-loading .skeleton {
+  display: block;
+}
+
+body.is-loading .card {
+  display: none;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 50%;
+  }
+
+  to {
+    background-position: 0 50%;
+  }
+}
+
+/* 600px 이상: 카드 2열, 상세 2단 */
 @media (min-width: 600px) {
   nav ul {
     flex-direction: row;
@@ -304,7 +344,7 @@ footer p + p {
   }
 }
 
-/* 1024px 이상: 카드 4열, 히어로 높이 변경 */
+/* 1024px 이상: 카드 4열 */
 @media (min-width: 1024px) {
   .board {
     grid-template-columns: repeat(4, 1fr);
@@ -312,5 +352,18 @@ footer p + p {
 
   .hero {
     min-height: 60vh;
+  }
+}
+
+/* 보너스: 라이트 모드 */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f4f6fa;
+    --surface: #e2e8f0;
+    --text: #182235;
+    --accent: #1756a9;
+    --warn: #b42332;
+    --hover-shadow: #c2930066;
+    --detail-overlay: rgba(255, 255, 255, 0.9);
   }
 }
