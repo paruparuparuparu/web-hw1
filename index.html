@@ -3,53 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>시우의 영화 보드</title>
+  <title>내 영화 보드</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Noto+Sans+KR:wght@400;700&amp;display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- 헤더 -->
+  <!-- 헤더와 내비게이션 -->
   <header class="top">
-    <div class="header-inner">
-      <h1>
-        <a href="index.html">
-          시우의 영화 보드
-          <span class="brand-sub">SIWOO’S CINEMA NOTES</span>
-        </a>
-      </h1>
+    <h1>내 영화 보드</h1>
 
-      <nav aria-label="주 메뉴">
-        <ul>
-          <li><a href="#mine">인생 영화</a></li>
-          <li><a href="#boxoffice">박스오피스</a></li>
-          <li><a href="detail.html">상세 보기</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="#mine">인생 영화</a></li>
+        <li><a href="#boxoffice">박스오피스</a></li>
+        <li><a href="detail.html">상세</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- 히어로 -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-inner">
-      <p class="eyebrow">A COLLECTION OF STORIES</p>
-      <h2 id="hero-title">영화가 끝나도,<br>이야기는 남는다.</h2>
-      <p>내가 고른 다섯 편과 오늘 다시 들여다보는 극장가.</p>
-      <a class="button" href="#mine">내 인생 영화 만나기 ↗</a>
-    </div>
+  <section class="hero">
+    <h2>내가 고른 영화 다섯 편</h2>
+    <p>내 인생 영화와 일별 박스오피스 TOP 5를 소개합니다.</p>
   </section>
 
-  <main id="main-content">
-    <!-- 내 인생 영화 -->
-    <section id="mine" aria-labelledby="mine-title">
-      <p class="eyebrow">01 / PERSONAL PICKS</p>
-      <h2 id="mine-title">내 인생 영화 5편</h2>
-      <p class="section-intro">
-        오래 기억하고 싶은 장면, 다시 꺼내 보고 싶은 이야기.
-      </p>
+  <main>
+    <!-- 내 인생 영화 5편 -->
+    <section id="mine">
+      <h2>내 인생 영화 5편</h2>
 
       <div class="board">
         <article class="card">
@@ -57,15 +43,12 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/o1a5FULQTObsNbcgjapJtunpFzV.jpg"
             alt="타짜 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="badge" aria-label="TMDB 평점 6.9점">★ 6.9</span>
+          <span class="badge">6.9</span>
+
           <div class="info">
             <h3>타짜</h3>
             <p class="year">2006</p>
-            <a class="detail-link" href="detail.html">타짜 자세히 보기 →</a>
           </div>
         </article>
 
@@ -74,11 +57,9 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/xrlVhwi6OKMyQuDebpgaqU2LGju.jpg"
             alt="보헤미안 랩소디 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="badge" aria-label="TMDB 평점 7.948점">★ 7.948</span>
+          <span class="badge">7.948</span>
+
           <div class="info">
             <h3>보헤미안 랩소디</h3>
             <p class="year">2018</p>
@@ -90,11 +71,9 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/28A1VUDML1RzENYNtIU1WkBLT9V.jpg"
             alt="악마는 프라다를 입는다 2 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="badge" aria-label="TMDB 평점 7.038점">★ 7.038</span>
+          <span class="badge">7.038</span>
+
           <div class="info">
             <h3>악마는 프라다를 입는다 2</h3>
             <p class="year">2026</p>
@@ -106,11 +85,9 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/8ze9OcVuFiy94s6FFPvsn4oC2e1.jpg"
             alt="오디세이 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="badge" aria-label="TMDB 평점 8.013점">★ 8.013</span>
+          <span class="badge">8.013</span>
+
           <div class="info">
             <h3>오디세이</h3>
             <p class="year">2026</p>
@@ -122,11 +99,9 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/5TMyytCI5Pfc9c1eNsljiCdiB05.jpg"
             alt="극장판 치이카와: 인어 섬의 비밀 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="badge" aria-label="TMDB 평점 7.364점">★ 7.364</span>
+          <span class="badge">7.364</span>
+
           <div class="info">
             <h3>극장판 치이카와: 인어 섬의 비밀</h3>
             <p class="year">2026</p>
@@ -135,13 +110,10 @@
       </div>
     </section>
 
-    <!-- 일별 박스오피스 -->
-    <section id="boxoffice" aria-labelledby="boxoffice-title">
-      <p class="eyebrow">02 / AT THE BOX OFFICE</p>
-      <h2 id="boxoffice-title">일별 박스오피스 TOP 5</h2>
-      <p class="basis">
-        KOBIS 기준일 <time datetime="2026-10-26">2026-10-26</time>
-      </p>
+    <!-- 일별 박스오피스 TOP 5 -->
+    <section id="boxoffice">
+      <h2>일별 박스오피스 TOP 5</h2>
+      <p class="basis">KOBIS 기준일 2026-10-26</p>
 
       <div class="board">
         <article class="card">
@@ -149,17 +121,15 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/5TMyytCI5Pfc9c1eNsljiCdiB05.jpg"
             alt="극장판 치이카와: 인어 섬의 비밀 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="rank" aria-label="박스오피스 1위">1</span>
-          <span class="badge" aria-label="TMDB 평점 7.364점">★ 7.364</span>
+          <span class="rank">1</span>
+          <span class="badge">7.364</span>
+
           <div class="info">
             <h3>극장판 치이카와: 인어 섬의 비밀</h3>
             <p class="year">개봉 2026-09-30</p>
             <p class="audience">누적 2,268,255명</p>
-            <p class="change" aria-label="전날 대비 순위 변동 없음">-</p>
+            <p class="change">-</p>
           </div>
         </article>
 
@@ -168,17 +138,15 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/vxLkqJHsFmrnOg78KoTvwxXDTKo.jpg"
             alt="암살자(들) 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="rank" aria-label="박스오피스 2위">2</span>
-          <span class="badge" aria-label="TMDB 평점 7.2점">★ 7.2</span>
+          <span class="rank">2</span>
+          <span class="badge">7.2</span>
+
           <div class="info">
             <h3>암살자(들)</h3>
             <p class="year">개봉 2026-09-23</p>
             <p class="audience">누적 3,382,043명</p>
-            <p class="change" aria-label="전날 대비 순위 변동 없음">-</p>
+            <p class="change">-</p>
           </div>
         </article>
 
@@ -187,17 +155,15 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/6DLBaO4pKBuEXeoHZCCpEVAqyKz.jpg"
             alt="실낙원 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="rank" aria-label="박스오피스 3위">3</span>
-          <span class="badge" aria-label="TMDB 평점 8.0점">★ 8.0</span>
+          <span class="rank">3</span>
+          <span class="badge">8.0</span>
+
           <div class="info">
             <h3>실낙원</h3>
             <p class="year">개봉 2026-10-21</p>
             <p class="audience">누적 112,191명</p>
-            <p class="change" aria-label="전날 대비 순위 변동 없음">-</p>
+            <p class="change">-</p>
           </div>
         </article>
 
@@ -206,17 +172,15 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/ueigb5zra1tj6FTK9yhh2P33P9B.jpg"
             alt="타짜: 벨제붑의 노래 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="rank" aria-label="박스오피스 4위">4</span>
-          <span class="badge" aria-label="TMDB 평점 7.0점">★ 7.0</span>
+          <span class="rank">4</span>
+          <span class="badge">7.0</span>
+
           <div class="info">
             <h3>타짜: 벨제붑의 노래</h3>
             <p class="year">개봉 2026-09-23</p>
             <p class="audience">누적 2,006,478명</p>
-            <p class="change" aria-label="전날 대비 순위 변동 없음">-</p>
+            <p class="change">-</p>
           </div>
         </article>
 
@@ -225,17 +189,15 @@
             class="poster"
             src="https://image.tmdb.org/t/p/w342/9l1NuFjel2j89hiuiJbsxfblqjy.jpg"
             alt="클레이페이스 포스터"
-            width="342"
-            height="513"
-            loading="lazy"
           >
-          <span class="rank" aria-label="박스오피스 5위">5</span>
-          <span class="badge" aria-label="TMDB 평점 7.577점">★ 7.577</span>
+          <span class="rank">5</span>
+          <span class="badge">7.577</span>
+
           <div class="info">
             <h3>클레이페이스</h3>
             <p class="year">개봉 2026-10-21</p>
             <p class="audience">누적 84,196명</p>
-            <p class="change" aria-label="전날 대비 순위 변동 없음">-</p>
+            <p class="change">-</p>
           </div>
         </article>
       </div>
@@ -244,21 +206,15 @@
 
   <!-- 출처 -->
   <footer>
-    <div class="footer-inner">
-      <p>
-        이 사이트는 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지 않았습니다.<br>
-        <span lang="en">This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
-      </p>
-      <p>
-        포스터와 영화 정보:
-        <a href="https://www.themoviedb.org/">TMDB (https://www.themoviedb.org)</a>
-      </p>
-      <p>
-        박스오피스 데이터:
-        <a href="https://www.kobis.or.kr/">영화진흥위원회 영화관입장권통합전산망(KOBIS)</a>,
-        기준일 2026-10-26
-      </p>
-    </div>
+    <p>
+      이 사이트는 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지 않았습니다.
+      This product uses the TMDB API but is not endorsed or certified by TMDB.
+    </p>
+    <p>포스터와 영화 정보: TMDB (https://www.themoviedb.org)</p>
+    <p>
+      박스오피스 데이터: 영화진흥위원회 영화관입장권통합전산망(KOBIS),
+      기준일 2026-10-26
+    </p>
   </footer>
 </body>
 </html>
